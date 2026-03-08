@@ -14,16 +14,17 @@ Clone this repository:
 git clone https://github.com/ai-awesome/skill-submit-pr.git
 ```
 
-Then install the skill from the local path:
+Then symlink the skill into your Claude global config directory:
 
 ```sh
-claude mcp add-skill /path/to/skill-submit-pr
+mkdir -p ~/.claude/skills/submit-pr
+ln -sf "$(pwd)/skill-submit-pr/SKILL.md" ~/.claude/skills/submit-pr/SKILL.md
 ```
 
-Or install directly from the remote URL:
+Or add directly as a submodule in your dotfiles:
 
 ```sh
-claude mcp add-skill https://github.com/ai-awesome/skill-submit-pr
+git submodule add https://github.com/ai-awesome/skill-submit-pr.git ~/.claude/skills/submit-pr
 ```
 
 ## Customization
